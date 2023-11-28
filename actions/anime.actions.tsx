@@ -1,6 +1,9 @@
 "use server";
 
-import axios, { AxiosResponse } from "axios";
+import AnimeCard, {
+  AnimeProps,
+} from "@/components/AnimeCard";
+import axios from "axios";
 
 interface AnimeData {
   id: string;
@@ -14,18 +17,17 @@ interface AnimeData {
   score: string;
 }
 
+const MAX_LIMIT = 8;
+
 export const fetchAnime = async (
-  page: number
-) => {
+  pageNumber: number
+): Promise<AnimeData[]> => {
   try {
-    const response: AxiosResponse<AnimeData> =
-      await axios.get<AnimeData>(
-        `https://shikimori.one/api/animes?page=${page}&limit=8&order=popularity`
-      );
+    const response = await axios.get(
+      `https://shikimori.one/api/animes?page=${pageNumber}&limit=${MAX_LIMIT}&order=popularity`
+    );
 
-    const animeData: AnimeData = response.data;
-
-    return animeData;
+    return response.data;
   } catch (error: any) {
     throw new Error(
       `Failed fetching the data: ${error.message}`

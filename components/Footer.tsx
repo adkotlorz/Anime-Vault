@@ -13,7 +13,7 @@ const Footer = () => {
         height={44}
         className="object-contain"
       />
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 sm:">
         <Image
           src="./tiktok.svg"
           alt="logo"

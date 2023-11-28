@@ -1,11 +1,9 @@
+import { fetchAnime } from "@/actions/anime.actions";
 import {
   AnimeCard,
   LoadMore,
 } from "@/components";
-
 import { AnimeProps } from "@/components/AnimeCard";
-
-import { fetchAnime } from "@/actions/anime.actions";
 
 async function Home() {
   const data = await fetchAnime(1);
