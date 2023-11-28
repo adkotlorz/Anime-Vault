@@ -1,6 +1,6 @@
 ![Preview](https://i.ibb.co/3zLKQPT/Screenshot-1.png)
 
-## [Live Preview](https://anime-vault-inky-theta.vercel.app/ target="_blank)
+## [Live Preview](https://anime-vault-inky-theta.vercel.app/?target=_blank)
 
 # NodeJS & NPM versions
 
