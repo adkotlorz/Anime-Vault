@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export interface AnimeProp {
+export interface AnimeProps {
   id: string;
   name: string;
   image: {
@@ -12,12 +12,12 @@ export interface AnimeProp {
   score: string;
 }
 
-interface Prop {
-  anime: AnimeProp;
+interface AnimeCardProps {
+  anime: AnimeProps;
   index: number;
 }
 
-function AnimeCard({ anime }: Prop) {
+const AnimeCard = ({ anime }: AnimeCardProps) => {
   return (
     <div className="max-w-sm rounded relative w-full">
       <div className="relative w-full h-[37vh]">
@@ -49,7 +49,8 @@ function AnimeCard({ anime }: Prop) {
               className="object-contain"
             />
             <p className="text-base text-white font-bold">
-              {anime.episodes || anime.episodes_aired}
+              {anime.episodes ||
+                anime.episodes_aired}
             </p>
           </div>
           <div className="flex flex-row gap-2 items-center">
@@ -60,12 +61,14 @@ function AnimeCard({ anime }: Prop) {
               height={18}
               className="object-contain"
             />
-            <p className="text-base font-bold text-[#FFAD49]">{anime.score}</p>
+            <p className="text-base font-bold text-[#FFAD49]">
+              {anime.score}
+            </p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default AnimeCard;
